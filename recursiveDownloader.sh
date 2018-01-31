@@ -1,5 +1,5 @@
 #!/bin/bash
-# Anthony Rabiaza
+# AnthonyR
 # 2018-02-31
 
 #wget parameters,
