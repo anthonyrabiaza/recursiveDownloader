@@ -1,6 +1,6 @@
 #!/bin/bash
 # Anthony Rabiaza
-# anthony.rabiaza@gmail.com
+# github: anthonyrabiaza
 # 2018-02-31
 
 #wget parameters,
