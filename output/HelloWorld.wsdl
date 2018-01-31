@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.example.org/HelloWorld/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+name="HelloWorld"
+xmlns:req="http://www.example.org/HelloWorldRequest"
+xmlns:rsp="http://www.example.org/HelloWorldResponse"
+targetNamespace="http://www.example.org/HelloWorld/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/HelloWorld/">
+	   <xsd:import namespace="http://www.example.org/HelloWorldRequest" schemaLocation="HelloWorldRequest.xsd"/>
+	   <xsd:import namespace="http://www.example.org/HelloWorldResponse" schemaLocation="HelloWorldResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sayGreetings">
+    <wsdl:part element="req:sayGreetings" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="sayGreetingsResponse">
+    <wsdl:part element="rsp:sayGreetingsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld">
+    <wsdl:operation name="sayGreetings">
+      <wsdl:input message="tns:sayGreetings"/>
+      <wsdl:output message="tns:sayGreetingsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorldSOAP" type="tns:HelloWorld">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayGreetings">
+      <soap:operation soapAction="http://www.example.org/HelloWorld/sayGreetings"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorld">
+    <wsdl:port binding="tns:HelloWorldSOAP" name="HelloWorldSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

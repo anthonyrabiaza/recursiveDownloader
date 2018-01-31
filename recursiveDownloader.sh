@@ -2,11 +2,12 @@
 # Anthony/Rabiaza
 # 2018-02-31
 
-#wget parameters,
+#wget parameters:
+# -T 60: timeout of 60 sec	
 # -nv: non verbose 
 # -nc: skip downloads that would download to existing files
 # --secure-protocol=TLSv1 --no-check-certificate: security related
-wget_params="-nv -nc --secure-protocol=TLSv1 --no-check-certificate"
+wget_params="-T 60 -nv -nc --secure-protocol=TLSv1 --no-check-certificate"
 
 
 function help() {
@@ -16,9 +17,17 @@ function help() {
 }
 
 function download() {
-	echo -e "\tDownloading ${1##*/}"
+	export filename=${1##*/}
+	if [ "$filename" == "" ];
+	then
+		echo -e "\tError for $1"
+		echo -ne "\t\t"
+		return -1
+	fi
+	echo -e "\tDownloading $filename"
 	echo -en "\t\twget -> "
 	wget $wget_params $1
+	echo ""
 }
 
 function getDependencies() {
@@ -29,7 +38,7 @@ function getDependencies() {
 			export dependencies=`grep -Po 'schemaLocation="\K.*?(?=")' $1`
 			echo "$dependencies" | while read -r dependency
 			do
-			download $2/$dependency
+				download $2/$dependency
 				getDependencies $dependency $2
 			done
 		else
@@ -54,12 +63,12 @@ echo "Creating output folder"
 mkdir -p output
 cd output
 
-download $1
-
 export filename=${1##*/}
 export serverPath=${1%/*}
 
 echo "File to download $filename on $serverPath"
+
+download $1
 
 getDependencies $filename $serverPath
 

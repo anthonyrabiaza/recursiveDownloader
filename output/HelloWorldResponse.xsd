@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://www.example.org/HelloWorldResponse" 
+targetNamespace="http://www.example.org/HelloWorldResponse">
+
+    <element name="sayGreetingsResponse">
+    	<complexType>
+    		<sequence>
+    			<element id="greeting" name="greeting" minOccurs="1" maxOccurs="1" type="string"/>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

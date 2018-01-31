@@ -34,14 +34,19 @@ The downloader will download this resource and then will open it to find any dep
 Recursive Downloader
 Command:    ./recursiveDownloader.sh
 Parameters: http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorld.wsdl
-        Downloading HelloWorld.wsdl
-                wget -> 2018-01-31 13:30:01 URL:http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorld.wsdl [1975/1975] -> "HelloWorld.wsdl" [1]
+
+Creating output folder
 File to download HelloWorld.wsdl on http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl
+        Downloading HelloWorld.wsdl
+                wget -> 2018-01-31 14:45:29 URL:http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorld.wsdl [1975/1975] -> "HelloWorld.wsdl" [1]
+
         Downloading HelloWorldRequest.xsd
-                wget -> 2018-01-31 13:30:01 URL:http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorldRequest.xsd [514/514] -> "HelloWorldRequest.xsd" [1]
+                wget -> 2018-01-31 14:45:29 URL:http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorldRequest.xsd [514/514] -> "HelloWorldRequest.xsd" [1]
+
                 No more dependencies for HelloWorldRequest.xsd
         Downloading HelloWorldResponse.xsd
-                wget -> 2018-01-31 13:30:01 URL:http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorldResponse.xsd [445/445] -> "HelloWorldResponse.xsd" [1]
+                wget -> 2018-01-31 14:45:30 URL:http://192.168.0.96:8080/HelloWorld_WebServiceProject/wsdl/HelloWorldResponse.xsd [445/445] -> "HelloWorldResponse.xsd" [1]
+
                 No more dependencies for HelloWorldResponse.xsd
 ```
 
