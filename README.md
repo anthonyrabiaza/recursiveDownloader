@@ -4,7 +4,8 @@ This simple bash script is used to download a WSDL and all related XSDs. If the 
 
 ## Getting Started
 
-Please pull the script from github and add execution right
+- Please pull the script from github, you can also download from [here](recursiveDownloader.sh?raw=true)
+- Add execution right
 
 ```
 chmod u+x recursiveDownloader.sh
