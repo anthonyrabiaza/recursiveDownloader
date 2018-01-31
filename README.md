@@ -56,6 +56,6 @@ drwxrwxrwx 0 root root 4096 Jan 31 13:51 ../
 -rwxrwxrwx 1 root root 1975 Jan 31 11:01 HelloWorld.wsdl*
 ```
 
-###Advanced configuration
+### Advanced configuration
 - wget is used to retrieve to resources and $wget_params is set by default with non-verbose, no-clobber (overwrite files if already present) and with SSL validation disabled. Please update wget_params is you need to change the wget behaviour
 - the dependencies is using the *schemaLocation* tag. To use other tag please update the function **getDependencies**
