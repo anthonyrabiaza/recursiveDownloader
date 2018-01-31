@@ -14,11 +14,11 @@ chmod u+x recursiveDownloader.sh
 
 Here is an example of WSDL with two XSDs
 
-![alt text](resources/1-DirectoryStructure.png "Directory")
+![alt text](resources/1-DirectoryStructure.PNG "Directory")
 
 And the WSDL contains import (the resource is available on the *schemaLocation* tag)
 
-![alt text](resources/2-WSDLwithImport.png "WSDL")
+![alt text](resources/2-WSDLwithImport.PNG "WSDL")
 
 
 ### Run the tool
