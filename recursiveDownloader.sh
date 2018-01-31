@@ -1,6 +1,5 @@
 #!/bin/bash
 # Anthony Rabiaza
-# github: anthonyrabiaza
 # 2018-02-31
 
 #wget parameters,
