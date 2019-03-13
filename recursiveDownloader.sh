@@ -38,8 +38,10 @@ function getDependencies() {
 			export dependencies=`grep -Po 'schemaLocation="\K.*?(?=")' $1`
 			echo "$dependencies" | while read -r dependency
 			do
+			if [ ! -f $dependency ] ; then
 				download $2/$dependency
 				getDependencies $dependency $2
+			fi
 			done
 		else
 			echo -e "\t\tNo more dependencies for $1"
